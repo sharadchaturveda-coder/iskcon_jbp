@@ -160,11 +160,15 @@ const ArambhFestPage: React.FC = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Banner Image */}
               <div className="bg-saffron-50 p-4 rounded-lg border border-gold-200">
-                <img
-                  src="/banner.jpg"
-                  alt="Event Banner"
-                  className="w-full h-auto rounded-lg"
-                />
+                <picture className="w-full h-auto rounded-lg">
+                  <source srcSet="/poster.avif" type="image/avif" />
+                  <source srcSet="/poster.webp" type="image/webp" />
+                  <img
+                    src="/banner.jpg"
+                    alt="Event Banner"
+                    className="w-full h-auto rounded-lg"
+                  />
+                </picture>
               </div>
 
               {/* Submit Button */}
