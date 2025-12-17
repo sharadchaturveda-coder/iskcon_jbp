@@ -158,13 +158,13 @@ const ArambhFestPage: React.FC = () => {
         <div className="max-w-2xl mx-auto">
           <GoldBorder className="p-8 bg-white">
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Price Summary */}
+              {/* Banner Image */}
               <div className="bg-saffron-50 p-4 rounded-lg border border-gold-200">
-                <div className="text-center">
-                  <div className="text-lg font-bold text-maroon-900 mb-2">Entry Fee</div>
-                  <div className="text-3xl font-bold text-gold-600">₹{eventDetails.ticketPrice}</div>
-                  <div className="text-sm text-maroon-700 mt-1">per person</div>
-                </div>
+                <img
+                  src="/banner.jpg"
+                  alt="Event Banner"
+                  className="w-full h-auto rounded-lg"
+                />
               </div>
 
               {/* Submit Button */}
