@@ -72,38 +72,8 @@ const ArambhFestPage: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Validate form
-    const errors = validateBookingForm(formData);
-    if (Object.keys(errors).length > 0) {
-      setFormErrors(errors);
-      return;
-    }
-
-    if (!razorpayLoaded) {
-      alert('Payment system is loading. Please try again in a moment.');
-      return;
-    }
-
-    setIsSubmitting(true);
-    setBookingStatus('processing');
-
-    try {
-      // Create order
-      const paymentData = await createOrder(formData as BookingFormData);
-
-      // Initialize payment
-      initializeRazorpayCheckout(
-        paymentData,
-        handlePaymentSuccess,
-        handlePaymentFailure
-      );
-    } catch (error) {
-      console.error('Error creating order:', error);
-      setBookingStatus('error');
-      alert('Failed to initialize payment. Please try again.');
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Redirect to Razorpay payment link
+    window.location.href = 'https://pages.razorpay.com/pl_RskjfyGw1AvjLM/view';
   };
 
   // Handle successful payment
@@ -178,6 +148,63 @@ const ArambhFestPage: React.FC = () => {
               <div className="text-maroon-900 font-bold text-sm">{eventDetails.venue}</div>
             </GoldBorder>
           </div>
+        </div>
+      </section>
+
+      {/* Booking Form */}
+      <section className="container mx-auto px-4 mb-16">
+        <SectionHeading title="Book Your Tickets" subtitle="Secure Your Spot" />
+
+        <div className="max-w-2xl mx-auto">
+          <GoldBorder className="p-8 bg-white">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Price Summary */}
+              <div className="bg-saffron-50 p-4 rounded-lg border border-gold-200">
+                <div className="text-center">
+                  <div className="text-lg font-bold text-maroon-900 mb-2">Entry Fee</div>
+                  <div className="text-3xl font-bold text-gold-600">₹{eventDetails.ticketPrice}</div>
+                  <div className="text-sm text-maroon-700 mt-1">per person</div>
+                </div>
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                disabled={isSubmitting || bookingStatus === 'processing'}
+                className="w-full bg-gradient-to-r from-saffron-500 to-maroon-800 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+              >
+                {isSubmitting || bookingStatus === 'processing' ? (
+                  <span className="flex items-center justify-center">
+                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                    Processing...
+                  </span>
+                ) : (
+                  <span className="flex items-center justify-center">
+                    <Ticket className="w-5 h-5 mr-2" />
+                    Book Now - ₹{eventDetails.ticketPrice}
+                  </span>
+                )}
+              </button>
+
+              {/* Status Messages */}
+              {bookingStatus === 'success' && (
+                <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-green-800">
+                  <div className="flex items-center">
+                    <Heart className="w-5 h-5 mr-2" />
+                    <span className="font-bold">Booking Successful!</span>
+                  </div>
+                  <p className="mt-2">Confirmation email sent. See you at the festival!</p>
+                </div>
+              )}
+
+              {bookingStatus === 'error' && (
+                <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-800">
+                  <p className="font-bold">Booking Failed</p>
+                  <p className="mt-2">Please try again or contact support.</p>
+                </div>
+              )}
+            </form>
+          </GoldBorder>
         </div>
       </section>
 
@@ -257,120 +284,7 @@ const ArambhFestPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Booking Form */}
-      <section className="container mx-auto px-4 mb-16">
-        <SectionHeading title="Book Your Tickets" subtitle="Secure Your Spot" />
 
-        <div className="max-w-2xl mx-auto">
-          <GoldBorder className="p-8 bg-white">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Name */}
-              <div>
-                <label className="block text-maroon-900 font-bold mb-2">Full Name *</label>
-                <input
-                  type="text"
-                  value={formData.name || ''}
-                  onChange={(e) => handleInputChange('name', e.target.value)}
-                  className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500 ${
-                    formErrors.name ? 'border-red-500' : 'border-stone-300'
-                  }`}
-                  placeholder="Enter your full name"
-                />
-                {formErrors.name && <p className="text-red-500 text-sm mt-1">{formErrors.name}</p>}
-              </div>
-
-              {/* Email */}
-              <div>
-                <label className="block text-maroon-900 font-bold mb-2">Email Address *</label>
-                <input
-                  type="email"
-                  value={formData.email || ''}
-                  onChange={(e) => handleInputChange('email', e.target.value)}
-                  className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500 ${
-                    formErrors.email ? 'border-red-500' : 'border-stone-300'
-                  }`}
-                  placeholder="your.email@example.com"
-                />
-                {formErrors.email && <p className="text-red-500 text-sm mt-1">{formErrors.email}</p>}
-              </div>
-
-              {/* Phone */}
-              <div>
-                <label className="block text-maroon-900 font-bold mb-2">Phone Number *</label>
-                <input
-                  type="tel"
-                  value={formData.phone || ''}
-                  onChange={(e) => handleInputChange('phone', e.target.value)}
-                  className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500 ${
-                    formErrors.phone ? 'border-red-500' : 'border-stone-300'
-                  }`}
-                  placeholder="9876543210"
-                />
-                {formErrors.phone && <p className="text-red-500 text-sm mt-1">{formErrors.phone}</p>}
-              </div>
-
-              {/* Special Requests */}
-              <div>
-                <label className="block text-maroon-900 font-bold mb-2">Special Requests (Optional)</label>
-                <textarea
-                  value={formData.specialRequests || ''}
-                  onChange={(e) => handleInputChange('specialRequests', e.target.value)}
-                  className="w-full p-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500"
-                  rows={3}
-                  placeholder="Any special requirements or notes..."
-                />
-                {formErrors.specialRequests && <p className="text-red-500 text-sm mt-1">{formErrors.specialRequests}</p>}
-              </div>
-
-              {/* Price Summary */}
-              <div className="bg-saffron-50 p-4 rounded-lg border border-gold-200">
-                <div className="text-center">
-                  <div className="text-lg font-bold text-maroon-900 mb-2">Entry Fee</div>
-                  <div className="text-3xl font-bold text-gold-600">₹{eventDetails.ticketPrice}</div>
-                  <div className="text-sm text-maroon-700 mt-1">per person</div>
-                </div>
-              </div>
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                disabled={isSubmitting || bookingStatus === 'processing'}
-                className="w-full bg-gradient-to-r from-saffron-500 to-maroon-800 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-              >
-                {isSubmitting || bookingStatus === 'processing' ? (
-                  <span className="flex items-center justify-center">
-                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                    Processing...
-                  </span>
-                ) : (
-                  <span className="flex items-center justify-center">
-                    <Ticket className="w-5 h-5 mr-2" />
-                    Book Now - ₹{eventDetails.ticketPrice}
-                  </span>
-                )}
-              </button>
-
-              {/* Status Messages */}
-              {bookingStatus === 'success' && (
-                <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-green-800">
-                  <div className="flex items-center">
-                    <Heart className="w-5 h-5 mr-2" />
-                    <span className="font-bold">Booking Successful!</span>
-                  </div>
-                  <p className="mt-2">Confirmation email sent. See you at the festival!</p>
-                </div>
-              )}
-
-              {bookingStatus === 'error' && (
-                <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-800">
-                  <p className="font-bold">Booking Failed</p>
-                  <p className="mt-2">Please try again or contact support.</p>
-                </div>
-              )}
-            </form>
-          </GoldBorder>
-        </div>
-      </section>
 
       {/* Contact Information */}
       <section className="bg-maroon-900 py-16">
