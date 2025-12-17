@@ -5,7 +5,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sun } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { NavItem, Page } from '../types';
 
 /**
@@ -28,6 +28,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'About', page: 'about' },
   { label: 'Darshan', page: 'darshan' },
   { label: 'Events', page: 'events' },
+  { label: 'Arambh Fest', page: 'arambh-fest' },
   { label: 'Gita Course', page: 'gita-course' },
   { label: 'Projects', page: 'projects' },
 ];
@@ -123,8 +124,12 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
           <div className="flex justify-between items-center">
             {/* Logo Section */}
             <button onClick={() => handleNavigate('home')} className="flex items-center space-x-3 group">
-              <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-full bg-saffron-100 border-2 border-gold-500 flex items-center justify-center shadow-lg overflow-hidden">
-                 <Sun className="text-gold-600 w-8 h-8 group-hover:animate-spin-slow duration-1000" />
+              <div className="relative w-12 h-12 md:w-16 md:h-16 flex items-center justify-center">
+                <img
+                  src="/logo.svg"
+                  alt="ISKCON Jabalpur Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div className={`flex flex-col text-left ${logoTextClass}`}>
                 <span className="font-serif text-xl md:text-2xl font-bold leading-none tracking-wide">ISKCON</span>
@@ -186,10 +191,10 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                 <span className={"absolute -bottom-1 left-0 h-0.5 bg-gold-500 transition-all duration-300 " + (currentPage === 'projects' ? 'w-full' : 'w-0 group-hover:w-full')}></span>
               </button>
               <button
-                onClick={() => handleNavigate('donate')}
-                className="bg-gold-500 hover:bg-gold-600 text-white px-6 py-2 rounded-full font-bold shadow-lg transition-transform hover:scale-105 border-2 border-gold-300"
+                onClick={() => handleNavigate('arambh-fest')}
+                className="bg-gradient-to-r from-saffron-500 to-maroon-800 text-white px-6 py-2 rounded-full font-bold shadow-lg transition-transform hover:scale-105 border-2 border-gold-300"
               >
-                Donate Now
+                Book Tickets
               </button>
             </nav>
 
@@ -215,7 +220,19 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
               {/* Header */}
               <div className="bg-gradient-to-r from-maroon-900 to-saffron-600 p-6 text-white">
                 <div className="flex justify-between items-center">
-                  <h2 className="font-serif text-2xl font-bold tracking-wide">ISKCON</h2>
+                  <div className="flex items-center space-x-3">
+                    <div className="relative w-10 h-10 flex items-center justify-center">
+                      <img
+                        src="/logo.svg"
+                        alt="ISKCON Jabalpur Logo"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <div>
+                      <h2 className="font-serif text-xl font-bold tracking-wide">ISKCON</h2>
+                      <p className="font-sans text-xs font-semibold tracking-widest uppercase text-gold-300">Jabalpur</p>
+                    </div>
+                  </div>
                   <button
                     onClick={() => setMobileMenuOpen(false)}
                     className="text-white hover:text-gold-300 transition-colors"
@@ -224,7 +241,6 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                     <X size={24} />
                   </button>
                 </div>
-                <p className="font-sans text-sm font-semibold tracking-widest uppercase text-gold-300">Jabalpur</p>
               </div>
 
               {/* Navigation */}
@@ -245,10 +261,10 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
 
                 <div className="pt-4 border-t border-gold-200">
                   <button
-                    onClick={() => handleNavigate('donate')}
+                    onClick={() => handleNavigate('arambh-fest')}
                     className="w-full bg-gradient-to-r from-saffron-500 to-maroon-800 text-white py-4 px-6 rounded-lg font-bold shadow-lg transition-transform hover:scale-105"
                   >
-                    Donate Now
+                    Book Tickets
                   </button>
                 </div>
               </nav>

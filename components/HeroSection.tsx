@@ -5,7 +5,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { ArrowDown, Flower } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 import { Page } from '../types';
 
 /**
@@ -119,8 +119,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
         <div className="animate-[fadeInDown_1s_ease-out]">
           <div className="flex justify-center mb-4 text-gold-400 opacity-90">
-             <Flower size={40} className="animate-spin-slow animate-pulse" />
-             <div className="absolute w-16 h-16 border border-gold-400/30 rounded-full animate-ping"></div>
+             <div className="relative w-16 h-16 md:w-20 md:h-20 flex items-center justify-center animate-pulse">
+               <img
+                 src="/logo.svg"
+                 alt="ISKCON Jabalpur Logo"
+                 className="w-full h-full object-contain animate-spin-slow"
+               />
+             </div>
+             <div className="absolute w-20 h-20 md:w-24 md:h-24 border border-gold-400/30 rounded-full animate-ping"></div>
           </div>
 
           {/* Floating Sacred Symbols */}

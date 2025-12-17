@@ -18,7 +18,8 @@ import DarshanPage from './components/pages/DarshanPage';
 import EventsPage from './components/pages/EventsPage';
 import GitaCoursePage from './components/pages/GitaCoursePage';
 import ProjectsPage from './components/pages/ProjectsPage';
-import DonatePage from './components/pages/DonatePage';
+
+import ArambhFestPage from './components/pages/ArambhFestPage';
 import { Page } from './types';
 
 /**
@@ -84,8 +85,8 @@ function App() {
         return <GitaCoursePage />;
       case 'projects':
         return <ProjectsPage />;
-      case 'donate':
-        return <DonatePage />;
+      case 'arambh-fest':
+        return <ArambhFestPage />;
       default:
         // Fallback for invalid/undefined pages
         return null;

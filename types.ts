@@ -9,7 +9,7 @@ import React from 'react';
  * Represents the different pages/routes available in the application.
  * Used for navigation state management and routing logic.
  */
-export type Page = 'home' | 'about' | 'darshan' | 'events' | 'gita-course' | 'projects' | 'donate';
+export type Page = 'home' | 'about' | 'darshan' | 'events' | 'gita-course' | 'projects' | 'arambh-fest';
 
 /**
  * Represents a navigation menu item with a display label and corresponding page.
@@ -87,4 +87,68 @@ export interface Quiz {
   description: string;
   /** Array of questions that comprise this quiz */
   questions: QuizQuestion[];
+}
+
+/**
+ * Represents booking form data collected from users for event registration.
+ * Contains personal information and booking preferences for the ARAMBH event.
+ */
+export interface BookingFormData {
+  /** Full name of the attendee */
+  name: string;
+  /** Email address for confirmations and communications */
+  email: string;
+  /** Phone number for contact purposes */
+  phone: string;
+  /** Number of tickets to book (1-10 range typically) */
+  ticketCount: number;
+  /** Optional special requirements or notes */
+  specialRequests?: string;
+}
+
+/**
+ * Represents payment data for Razorpay integration.
+ * Contains order information and customer details for payment processing.
+ */
+export interface PaymentData {
+  /** Unique order ID generated for the booking */
+  orderId: string;
+  /** Payment amount in paisa (e.g., 9900 for ₹99) */
+  amount: number;
+  /** Currency code (typically 'INR') */
+  currency: string;
+  /** Customer name for payment */
+  name: string;
+  /** Customer email for payment receipt */
+  email: string;
+  /** Customer phone for payment verification */
+  phone: string;
+}
+
+/**
+ * Represents booking confirmation details after successful payment.
+ * Contains all information needed for confirmation email and display.
+ */
+export interface BookingConfirmation {
+  /** Unique booking ID for reference */
+  bookingId: string;
+  /** Payment status ('success', 'failed', 'pending') */
+  paymentStatus: 'success' | 'failed' | 'pending';
+  /** Number of tickets booked */
+  ticketCount: number;
+  /** Total amount paid */
+  totalAmount: number;
+  /** Event details for confirmation */
+  eventInfo: {
+    name: string;
+    date: string;
+    time: string;
+    venue: string;
+  };
+  /** Attendee contact information */
+  customerInfo: {
+    name: string;
+    email: string;
+    phone: string;
+  };
 }

@@ -48,9 +48,9 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <ul className="space-y-3 text-sm font-semibold text-maroon-800">
               <li><button onClick={() => onNavigate('darshan')} className="hover:text-gold-600 transition-colors flex items-center text-left"><span className="text-gold-500 mr-2">›</span> Daily Darshan</button></li>
               <li><button onClick={() => onNavigate('events')} className="hover:text-gold-600 transition-colors flex items-center text-left"><span className="text-gold-500 mr-2">›</span> Festival Calendar</button></li>
+              <li><button onClick={() => onNavigate('arambh-fest')} className="hover:text-gold-600 transition-colors flex items-center text-left"><span className="text-gold-500 mr-2">›</span> Arambh Fest</button></li>
               <li><button onClick={() => onNavigate('gita-course')} className="hover:text-gold-600 transition-colors flex items-center text-left"><span className="text-gold-500 mr-2">›</span> Gita Course</button></li>
               <li><button onClick={() => onNavigate('projects')} className="hover:text-gold-600 transition-colors flex items-center text-left"><span className="text-gold-500 mr-2">›</span> New Temple Project</button></li>
-              <li><button onClick={() => onNavigate('donate')} className="hover:text-gold-600 transition-colors flex items-center text-left"><span className="text-gold-500 mr-2">›</span> Donate</button></li>
             </ul>
           </div>
 
