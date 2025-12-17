@@ -93,7 +93,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1561577553-614e593452bd?q=80&w=2000&auto=format&fit=crop"
-          alt="Temple Deity"
           className="w-full h-full object-cover object-top animate-[scale_40s_linear_infinite_alternate]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-maroon-900/70 via-purple-900/40 via-maroon-900/50 to-saffron-900/80 mix-blend-multiply"></div>
