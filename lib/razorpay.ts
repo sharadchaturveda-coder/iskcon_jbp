@@ -13,7 +13,7 @@ const RAZORPAY_CONFIG = {
   currency: 'INR',
   name: 'ISKCON Jabalpur',
   description: 'ARAMBH – Hare Krishna Fest 2026',
-  image: '/logo.svg', // Temple logo if available
+  image: '/Iskcon.svg', // Temple logo if available
 };
 
 /**

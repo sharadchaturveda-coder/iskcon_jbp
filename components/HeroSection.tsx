@@ -120,7 +120,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
           <div className="flex justify-center mb-4 text-gold-400 opacity-90">
              <div className="relative w-16 h-16 md:w-20 md:h-20 flex items-center justify-center animate-pulse">
                <img
-                 src="/logo.svg"
+                 src="/Iskcon.svg"
                  alt="ISKCON Jabalpur Logo"
                  className="w-full h-full object-contain animate-spin-slow"
                />

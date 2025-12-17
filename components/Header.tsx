@@ -126,7 +126,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
             <button onClick={() => handleNavigate('home')} className="flex items-center space-x-3 group">
               <div className="relative w-12 h-12 md:w-16 md:h-16 flex items-center justify-center">
                 <img
-                  src="/logo.svg"
+                  src="/Iskcon.svg"
                   alt="ISKCON Jabalpur Logo"
                   className="w-full h-full object-contain"
                 />
@@ -223,7 +223,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                   <div className="flex items-center space-x-3">
                     <div className="relative w-10 h-10 flex items-center justify-center">
                       <img
-                        src="/logo.svg"
+                        src="/Iskcon.svg"
                         alt="ISKCON Jabalpur Logo"
                         className="w-full h-full object-contain"
                       />
