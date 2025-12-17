@@ -25,7 +25,7 @@ const GitaCourse: React.FC<GitaCourseProps> = ({ onNavigate }) => {
           
           {/* Left Side: Daily Wisdom Card (Replaced Image) */}
           <div className="w-full lg:w-1/2">
-             <div className="relative bg-stone-100 text-maroon-900 p-8 md:p-12 rounded-lg shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500 max-w-lg mx-auto border-t-8 border-gold-500">
+             <div className="relative bg-stone-100 text-maroon-900 p-8 md:p-12 rounded-lg shadow-2xl max-w-lg mx-auto border-t-8 border-gold-500">
                {/* Decorative corners */}
                <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-maroon-900/30"></div>
                <div className="absolute top-4 right-4 w-8 h-8 border-r-2 border-t-2 border-maroon-900/30"></div>
