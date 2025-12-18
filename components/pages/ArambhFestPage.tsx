@@ -29,7 +29,7 @@ const ArambhFestPage: React.FC = () => {
     date: 'Sunday, 4th January 2026',
     time: '12:00 PM – 5:00 PM',
     venue: 'ISKCON Jabalpur, Chowkital, Lamhetaghat, Jabalpur (M.P.)',
-    ticketPrice: 140,
+    ticketPrice: 99,
   };
 
   // Lucky draw prizes
