@@ -58,14 +58,26 @@ const BannerPopup: React.FC<BannerPopupProps> = ({ onClose }) => {
         </button>
 
         {/* Image Container with Border */}
-        <div className="relative bg-white rounded-lg shadow-2xl overflow-hidden border-4 border-gold-400 max-w-3xl mx-auto">
+        <div
+          className="relative bg-white rounded-lg shadow-2xl overflow-hidden border-4 border-gold-400 max-w-3xl mx-auto cursor-pointer hover:shadow-[0_0_30px_rgba(245,158,11,0.3)] active:scale-95 transition-all duration-300 touch-manipulation"
+          onClick={() => window.location.href = 'https://pages.razorpay.com/pl_RskjfyGw1AvjLM/view'}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              window.location.href = 'https://pages.razorpay.com/pl_RskjfyGw1AvjLM/view';
+            }
+          }}
+          aria-label="Click to book tickets for Arambh Fest"
+        >
           {/* Banner Image with Fallback */}
           <picture className="block w-full h-auto">
             <source srcSet="/posternew.avif" type="image/avif" />
             <img
               src="/posternew.webp"
-              alt="ISKCON Jabalpur Banner"
-              className="w-full h-auto object-contain"
+              alt="ISKCON Jabalpur Banner - Click to Book Tickets"
+              className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
               loading="eager"
             />
           </picture>
