@@ -18,8 +18,8 @@ import DarshanPage from './components/pages/DarshanPage';
 import EventsPage from './components/pages/EventsPage';
 import GitaCoursePage from './components/pages/GitaCoursePage';
 import ProjectsPage from './components/pages/ProjectsPage';
-
 import ArambhFestPage from './components/pages/ArambhFestPage';
+import BannerPopup from './components/BannerPopup';
 import { Page } from './types';
 
 /**
@@ -38,6 +38,9 @@ function App() {
   // Current active page state - defaults to home page
   const [currentPage, setCurrentPage] = useState<Page>('home');
 
+  // Banner popup visibility state
+  const [showBannerPopup, setShowBannerPopup] = useState(false);
+
   /**
    * Effect hook that scrolls to top whenever page changes.
    * Ensures smooth navigation experience by resetting scroll position
@@ -45,6 +48,20 @@ function App() {
    */
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, [currentPage]);
+
+  /**
+   * Effect hook that shows banner popup when visiting home page.
+   * Automatically displays the banner popup for first-time visitors or page reloads.
+   */
+  useEffect(() => {
+    if (currentPage === 'home') {
+      // Show popup after a brief delay for better UX
+      const timer = setTimeout(() => {
+        setShowBannerPopup(true);
+      }, 500);
+      return () => clearTimeout(timer);
+    }
   }, [currentPage]);
 
   /**
@@ -97,6 +114,11 @@ function App() {
     <div className="min-h-screen flex flex-col bg-stone-50 text-maroon-900 font-sans">
       {/* Fixed header - stays at top during scrolling */}
       <Header currentPage={currentPage} onNavigate={setCurrentPage} />
+
+      {/* Banner Popup - shows on homepage load */}
+      {showBannerPopup && (
+        <BannerPopup onClose={() => setShowBannerPopup(false)} />
+      )}
 
       {/* Main content area - takes up remaining vertical space */}
       <main className="flex-grow pt-0 w-full overflow-hidden">
