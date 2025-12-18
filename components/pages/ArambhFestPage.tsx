@@ -161,10 +161,10 @@ const ArambhFestPage: React.FC = () => {
               {/* Banner Image */}
               <div className="bg-saffron-50 p-4 rounded-lg border border-gold-200">
                 <picture className="w-full h-auto rounded-lg">
-                  <source srcSet="/bannernew.avif" type="image/avif" />
-                  <source srcSet="/bannernew.webp" type="image/webp" />
+                  <source srcSet="/posternew.avif" type="image/avif" />
+                  <source srcSet="/posternew.webp" type="image/webp" />
                   <img
-                    src="/bannernew.webp"
+                    src="/posternew.webp"
                     alt="Event Banner"
                     className="w-full h-auto rounded-lg"
                   />

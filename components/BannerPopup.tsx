@@ -61,9 +61,9 @@ const BannerPopup: React.FC<BannerPopupProps> = ({ onClose }) => {
         <div className="relative bg-white rounded-lg shadow-2xl overflow-hidden border-4 border-gold-400 max-w-3xl mx-auto">
           {/* Banner Image with Fallback */}
           <picture className="block w-full h-auto">
-            <source srcSet="/bannernew.avif" type="image/avif" />
+            <source srcSet="/posternew.avif" type="image/avif" />
             <img
-              src="/bannernew.webp"
+              src="/posternew.webp"
               alt="ISKCON Jabalpur Banner"
               className="w-full h-auto object-contain"
               loading="eager"
