@@ -205,7 +205,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-maroon-900 z-20">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-maroon-900 z-20 hidden md:block">
         <ArrowDown size={32} />
       </div>
     </section>

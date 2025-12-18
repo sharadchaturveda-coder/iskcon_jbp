@@ -68,7 +68,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="text-gold-600 mr-3 flex-shrink-0" />
-                <span>info@iskconjabalpur.com</span>
+                <span>iskconjabalpur@gmail.com</span>
               </li>
             </ul>
           </div>
@@ -92,7 +92,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
         {/* Footer Bottom */}
         <div className="mt-16 pt-8 border-t border-gold-300 text-center text-maroon-800 text-sm flex flex-col items-center font-medium">
-          <p className="font-serif mb-2">© 2024 ISKCON Jabalpur. All rights reserved.</p>
+          <p className="font-serif mb-2">© 2025 ISKCON Jabalpur. All rights reserved.</p>
           <div className="flex items-center space-x-1 opacity-80">
             <span>Made with</span>
             <Heart size={12} className="text-red-600 fill-current" />
