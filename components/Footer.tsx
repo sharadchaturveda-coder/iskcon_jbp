@@ -64,7 +64,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
               <li className="flex items-center">
                 <Phone size={18} className="text-gold-600 mr-3 flex-shrink-0" />
-                <span>+91 123 456 7890</span>
+                <span>+91 7897091361 / +91 9111188108 / +91 9755984854</span>
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="text-gold-600 mr-3 flex-shrink-0" />
