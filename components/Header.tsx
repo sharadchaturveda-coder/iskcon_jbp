@@ -192,7 +192,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
               </button>
               <button
                 onClick={() => handleNavigate('arambh-fest')}
-                className="bg-gradient-to-r from-saffron-500 to-maroon-800 text-white px-6 py-2 rounded-full font-bold shadow-lg transition-transform hover:scale-105 border-2 border-gold-300"
+                className="bg-saffron-500 text-white px-6 py-2 rounded-full font-bold shadow-lg transition-all hover:scale-105 hover:shadow-xl border-2 border-gold-300"
               >
                 Book Tickets
               </button>
@@ -262,7 +262,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                 <div className="pt-4 border-t border-gold-200">
                   <button
                     onClick={() => handleNavigate('arambh-fest')}
-                    className="w-full bg-gradient-to-r from-saffron-500 to-maroon-800 text-white py-4 px-6 rounded-lg font-bold shadow-lg transition-transform hover:scale-105"
+                    className="w-full bg-saffron-500 text-white py-4 px-6 rounded-lg font-bold shadow-lg transition-all hover:scale-105 hover:shadow-xl"
                   >
                     Book Tickets
                   </button>
