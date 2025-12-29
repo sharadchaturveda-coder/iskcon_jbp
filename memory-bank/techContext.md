@@ -3,53 +3,77 @@
 ## Core Technology Stack
 
 ### Frontend Framework
-- **Framework**: [React, Vue, Angular, etc.]
-  - **Version**: [Specific version or version range]
-  - **Rationale**: [Why this framework was chosen]
+- **Framework**: React 18+
+  - **Version**: 18.x
+  - **Rationale**: Modern component-based architecture, excellent ecosystem, TypeScript support, spiritual app requirements
 
 ### Build Tools
-- **Build System**: [Vite, Webpack, Rollup, etc.]
-- **Package Manager**: [npm, yarn, pnpm, etc.]
-- **Development Server**: [Configuration and setup]
+- **Build System**: Vite
+  - **Version**: Latest stable
+  - **Rationale**: Fast development server, optimized production builds, native ES modules support
+- **Package Manager**: npm
+  - **Version**: 8.x+
+- **Development Server**: Vite dev server with HMR
 
 ### Styling
-- **CSS Framework**: [Tailwind, Bootstrap, Material-UI, etc.]
-- **Preprocessors**: [Sass, Less, PostCSS, etc.]
-- **Design System**: [Custom design system or component library]
+- **CSS Framework**: Tailwind CSS
+  - **Version**: 3.x
+  - **Configuration**: Custom spiritual color palette (maroon, gold, saffron)
+- **Design System**: Custom spiritual design system
+  - **Components**: GoldBorder, MandalaPattern, SectionHeading, OrnateDivider
+  - **Icons**: Lucide React icon library
 
 ### State Management
-- **Global State**: [Redux, Zustand, Context API, etc.]
-- **Local State**: [useState, useReducer patterns]
+- **Global State**: React Context API + useState
+- **Local State**: React hooks (useState, useEffect, useCallback)
+- **Data Fetching**: Custom hooks (useEvents, useGallery, usePosts, useCategories)
 
 ### API Integration
-- **HTTP Client**: [Axios, Fetch API, React Query, etc.]
-- **API Design**: [REST, GraphQL, tRPC, etc.]
-- **Authentication**: [JWT, OAuth, API keys, etc.]
+- **CMS**: Sanity.io headless CMS
+  - **Client**: @sanity/client, @sanity/image-url
+  - **Studio**: sanity/desk-tool with custom configuration
+- **HTTP Client**: Fetch API (built-in)
+- **API Design**: Sanity GROQ queries for content fetching
+- **Authentication**: Sanity authentication for studio access
 
 ## Development Environment
 
 ### IDE/Editor
-- **Primary Tool**: [VS Code, WebStorm, etc.]
-- **Extensions**: [Essential extensions and plugins]
-- **Configuration**: [Workspace settings, formatting rules]
+- **Primary Tool**: Visual Studio Code
+  - **Version**: Latest stable
+  - **Configuration**: Cline workspace settings
+- **Extensions**: TypeScript, React, Tailwind CSS, Git integration
+- **Configuration**: Prettier formatting, ESLint integration
 
 ### Code Quality
-- **Linting**: [ESLint, Prettier configuration]
-- **Type Checking**: [TypeScript configuration]
-- **Testing**: [Jest, Vitest, Cypress, etc.]
+- **Type Checking**: TypeScript 5.x with strict mode
+- **Formatting**: Prettier with custom spiritual app rules
+- **Linting**: ESLint with React and TypeScript rules
+- **Testing**: Manual testing with browser dev tools
 
 ### Environment Setup
-- **Node.js Version**: [Required Node version]
-- **OS Support**: [Windows, macOS, Linux compatibility]
-- **Dependencies**: [Required system dependencies]
+- **Node.js Version**: 18.x+ (LTS)
+- **OS Support**: Windows 10+, macOS, Linux
+- **Dependencies**: Git, Node.js, npm
 
 ## Key Libraries & Dependencies
 
 ### Production Dependencies
-[List major production dependencies with versions and purposes]
+- **@sanity/client**: ^6.x - Sanity CMS client for content fetching
+- **@sanity/image-url**: ^1.x - Image URL generation for Sanity assets
+- **react**: ^18.x - UI framework
+- **react-dom**: ^18.x - React DOM rendering
+- **lucide-react**: ^0.x - Icon library for spiritual design
+- **tailwindcss**: ^3.x - Utility-first CSS framework
 
 ### Development Dependencies
-[List major development dependencies with versions and purposes]
+- **@types/react**: TypeScript definitions for React
+- **@types/react-dom**: TypeScript definitions for React DOM
+- **@vitejs/plugin-react**: Vite plugin for React
+- **vite**: Build tool and dev server
+- **typescript**: TypeScript compiler
+- **autoprefixer**: CSS vendor prefixing
+- **postcss**: CSS processing
 
 ## Technical Constraints
 

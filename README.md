@@ -4,7 +4,7 @@
 
 # ISKCON Jabalpur - Temple Website
 
-A modern, responsive React-based website for ISKCON Jabalpur temple, built with TypeScript, Vite, and Tailwind CSS. Features spiritual content, temple schedules, educational courses, and community engagement.
+A modern, responsive React-based website for ISKCON Jabalpur temple with integrated Sanity CMS. Built with TypeScript, Vite, and Tailwind CSS. Features spiritual content management, temple schedules, educational courses, and community engagement.
 
 ## 🏛️ **About This Project**
 
@@ -12,10 +12,13 @@ ISKCON Jabalpur is a spiritual education and community platform for devotees of 
 
 - **Daily Darshan Timings** - Complete temple schedule and ceremonies
 - **Bhagavad Gita Course** - Interactive spiritual education with quizzes
-- **Temple Events** - Upcoming festivals and programs
+- **Temple Events** - Upcoming festivals and programs managed via CMS
+- **Spiritual Blog** - Teachings, announcements, and articles
+- **Photo Gallery** - Sacred moments and temple events
 - **Community Features** - Social media integration and engagement
-- **Donation Portal** - Secure online contributions
+- **Donation Portal** - Secure online contributions with Razorpay
 - **About Section** - Temple history and founder information
+- **Content Management** - Admin interface for easy content updates
 
 ## 🚀 **Features**
 
@@ -45,17 +48,24 @@ ISKCON Jabalpur is a spiritual education and community platform for devotees of 
 ## 🛠️ **Technology Stack**
 
 ### **Frontend**
-- **React 19** - Modern UI library with concurrent features
-- **TypeScript** - Type-safe development
-- **Vite** - Fast build tool and dev server
-- **Tailwind CSS** - Utility-first CSS framework
-- **Lucide React** - Beautiful icon library
+- **React 18+** - Modern UI library with concurrent features
+- **TypeScript** - Type-safe development with strict mode
+- **Vite** - Fast build tool and dev server with HMR
+- **Tailwind CSS** - Utility-first CSS framework with custom spiritual theme
+- **Lucide React** - Beautiful icon library for spiritual design
+
+### **Content Management System**
+- **Sanity.io** - Headless CMS for spiritual content management
+- **@sanity/client** - CMS API client for content fetching
+- **@sanity/image-url** - Optimized image delivery
+- **Sanity Studio** - Admin interface at https://iskcon-jabalpur-admin.sanity.studio
 
 ### **Build & Development**
-- **Vite** - Development server and build optimization
-- **ESLint** - Code quality and consistency
-- **npm** - Package management
-- **Git** - Version control
+- **Vite** - Development server and production build optimization
+- **ESLint** - Code quality and consistency enforcement
+- **Prettier** - Code formatting with spiritual app rules
+- **npm** - Package management and script execution
+- **Git** - Version control with conventional commits
 
 ## 📁 **Project Structure**
 
@@ -239,15 +249,77 @@ module.exports = {
 5. Update README documentation
 
 ### **Content Management**
-- **Text Content**: Edit directly in components
-- **Images**: Use responsive srcsets
-- **Spiritual Quotas**: Add to arrays with sources
+- **Text Content**: Edit directly in components or via Sanity CMS
+- **Images**: Use responsive srcsets or Sanity image optimization
+- **Spiritual Quotes**: Add to arrays with sources
+- **Dynamic Content**: Events, blog posts, and gallery managed via CMS
 
 ## 📝 **API Integration**
 
-Currently configured for future AI/ML features:
-- **Gemini API**: (Prepared but not implemented)
-- **Future Enhancements**: Chat bot, personalized content
+### **Sanity CMS Integration**
+- **Content API**: GROQ queries for fetching spiritual content
+- **Image CDN**: Optimized delivery with automatic resizing
+- **Real-time Updates**: Live content synchronization
+- **Authentication**: Secure studio access for temple staff
+
+### **Future Enhancements**
+- **AI/ML Features**: Gemini API for personalized spiritual guidance
+- **Chat Bot**: Interactive spiritual assistant
+- **Personalized Content**: Adaptive spiritual recommendations
+
+## 🪷 **Content Management System**
+
+### **Sanity Studio Access**
+- **URL**: https://iskcon-jabalpur-admin.sanity.studio
+- **Authentication**: Login with Sanity account
+- **Interface**: Clean, intuitive spiritual-themed admin panel
+
+### **Content Types Available**
+
+#### **🎭 Temple Events**
+- Add festivals, programs, workshops, special events
+- Upload event posters and set registration details
+- Schedule dates, venues, and categorize by type
+- Mark events as featured for homepage display
+
+#### **📸 Photo Gallery**
+- Create photo albums for temple events
+- Upload multiple high-quality images
+- Add captions and link to related events
+- Automatic image optimization and CDN delivery
+
+#### **📰 Spiritual Teachings (Blog)**
+- Write articles, teachings, and announcements
+- Rich text editor with image embedding
+- Categorize content (Teachings, News, etc.)
+- SEO optimization with meta descriptions
+- Reading time estimates and author attribution
+
+#### **🙏 Donations**
+- Track contributions and donor information
+- Link donations to specific events or purposes
+- Secure payment processing integration
+- Generate reports and acknowledgments
+
+### **CMS Features**
+- **Visual Editor**: Drag-and-drop content creation
+- **Media Library**: Centralized image and file management
+- **Version History**: Track content changes and revert if needed
+- **Collaborative Editing**: Multiple staff members can edit simultaneously
+- **Mobile Admin**: Manage content from phones and tablets
+
+### **Best Practices for Temple Staff**
+1. **Content Categories**: Use consistent categorization for easy browsing
+2. **Image Optimization**: Upload high-quality images (Sanity handles optimization)
+3. **SEO Fields**: Always fill in title and description for search visibility
+4. **Regular Updates**: Keep event information current and accurate
+5. **Photo Captions**: Add meaningful descriptions to all gallery images
+
+### **Training Resources**
+- Built-in help guides accessible within the studio
+- Step-by-step instructions for common tasks
+- Contact information for technical support
+- Video tutorials (planned for future release)
 
 ## 🚀 **Deployment**
 
