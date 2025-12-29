@@ -9,7 +9,7 @@ import React from 'react';
  * Represents the different pages/routes available in the application.
  * Used for navigation state management and routing logic.
  */
-export type Page = 'home' | 'about' | 'darshan' | 'events' | 'gita-course' | 'projects' | 'arambh-fest';
+export type Page = 'home' | 'about' | 'darshan' | 'events' | 'blog' | 'gallery' | 'gita-course' | 'projects' | 'arambh-fest';
 
 /**
  * Represents a navigation menu item with a display label and corresponding page.

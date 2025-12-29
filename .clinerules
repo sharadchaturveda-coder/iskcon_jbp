@@ -1,0 +1,128 @@
+# ====================================================================
+# UNIFIED AGENT SYSTEM — MEMORY BANK RULES FOR CLINE
+# ====================================================================
+
+# CRITICAL: Read this entire file before starting ANY task in this project
+
+# ====================================================================
+# MEMORY BANK STRUCTURE (MANDATORY)
+# ====================================================================
+
+This project uses a Memory Bank system for permanent project knowledge.
+Every project MUST contain and maintain these six files:
+
+1. memory-bank/projectbrief.md      - Core goals, deliverables, scope, success criteria
+2. memory-bank/productContext.md    - Why project exists, problems solved, user workflows
+3. memory-bank/activeContext.md     - Current focus, recent changes, next steps
+4. memory-bank/systemPatterns.md    - Architecture, design patterns, data flows
+5. memory-bank/techContext.md       - Tech stack, dependencies, constraints
+6. memory-bank/progress.md          - Completed work, remaining tasks, known issues
+
+# ====================================================================
+# MANDATORY: AUTOMATIC CONTEXT LOADING
+# ====================================================================
+
+BEFORE EVERY TASK, YOU MUST:
+
+1. **Read ALL six memory-bank files** using the view_file tool:
+   - memory-bank/projectbrief.md
+   - memory-bank/productContext.md
+   - memory-bank/activeContext.md
+   - memory-bank/systemPatterns.md
+   - memory-bank/techContext.md
+   - memory-bank/progress.md
+
+2. **Validate completeness**: Confirm all 6 files exist and contain content
+
+3. **Load context into your reasoning**: Use the knowledge from these files to inform your work
+
+4. **Never rely on conversational memory**: ONLY use documented knowledge from files
+
+# ====================================================================
+# MANDATORY: GLOBAL SKILLS CONTEXT LOADING
+# ====================================================================
+
+BEFORE EVERY TASK, YOU MUST:
+
+1. **Read ALL global skills files**:
+   - C:\Users\sha\Global developer folder\cline-rules.md
+   - C:\Users\sha\Global developer folder\skills\controlled-modification\SKILL.md
+   - C:\Users\sha\Global developer folder\skills\read-only-analysis\SKILL.md
+
+2. **Load global rules into your reasoning**: Apply general coding discipline, safety expectations, and skill-based behavioral constraints
+
+3. **Acknowledge loaded global context** in your response format
+
+# ====================================================================
+# WORKFLOW ENFORCEMENT
+# ====================================================================
+
+## Document-First Development
+ALL changes require documentation updates. No code without context.
+
+## After Completing Any Task:
+Update the relevant memory bank files to reflect what changed:
+
+- New features → Update `progress.md` and `activeContext.md`
+- Architecture changes → Update `systemPatterns.md`
+- Tech stack changes → Update `techContext.md`
+- Scope changes → Update `projectbrief.md`
+- User insights → Update `productContext.md`
+- Current focus changed → Update `activeContext.md`
+
+## Quality Rules:
+- Do NOT hallucinate ANY files
+- Do NOT infer undocumented decisions
+- Do NOT claim implementation without producing artifacts
+- Do NOT skip memory bank loading before tasks
+- Do NOT rely on conversational memory
+- ALWAYS rely on real files
+- ALWAYS update documentation after changes
+
+# ====================================================================
+# SPEC-DRIVEN DEVELOPMENT (SDD) REQUIREMENTS
+# ====================================================================
+
+## PRD-First Development
+EVERY feature or component MUST have a corresponding PRD.md specification before implementation begins.
+
+### PRD Requirements:
+- **Problem Statement**: Clear description of user problem
+- **Functional Requirements**: Detailed FR-x.x specifications with acceptance criteria
+- **Non-Functional Requirements**: Performance, security, usability, scalability specs
+- **Technical Specifications**: Architecture, APIs, data models
+- **Success Metrics**: Quantifiable success criteria
+
+### Development Process:
+1. **Create PRD.md** → 2. **Get stakeholder approval** → 3. **Implement against PRD** → 4. **Test against acceptance criteria**
+
+## No Code Without Specification
+- Do NOT write code until PRD is approved
+- Implementation MUST match PRD specifications exactly
+- Any changes to requirements require PRD updates and re-approval
+
+# ====================================================================
+# BEHAVIOR EXPECTATIONS
+# ====================================================================
+
+When you start a new task, you should:
+1. Read all 6 memory-bank files first
+2. Acknowledge what you learned from the memory bank
+3. Proceed with the task using that context
+4. After completion, update relevant memory bank files
+
+Example response format:
+```
+📚 Loading Memory Bank...
+✅ Read 6/6 memory bank files
+✅ Loaded global skills context: general coding discipline, safety expectations, controlled-modification and read-only-analysis skills
+✅ Loaded project context: [brief summary]
+✅ Current tech stack: [framework, tools, etc.]
+✅ Architecture: [key patterns loaded]
+
+Now proceeding with task: [user's request]
+```
+
+# ====================================================================
+# END OF RULES
+# ====================================================================

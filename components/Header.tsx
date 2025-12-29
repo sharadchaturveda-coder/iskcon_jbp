@@ -28,6 +28,8 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'About', page: 'about' },
   { label: 'Darshan', page: 'darshan' },
   { label: 'Events', page: 'events' },
+  { label: 'Gallery', page: 'gallery' },
+  { label: 'Blog', page: 'blog' },
   { label: 'Arambh Fest', page: 'arambh-fest' },
   { label: 'Gita Course', page: 'gita-course' },
   { label: 'Projects', page: 'projects' },
@@ -175,6 +177,20 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
               >
                 Events
                 <span className={"absolute -bottom-1 left-0 h-0.5 bg-gold-500 transition-all duration-300 " + (currentPage === 'events' ? 'w-full' : 'w-0 group-hover:w-full')}></span>
+              </button>
+              <button
+                onClick={() => handleNavigate('gallery')}
+                className={"text-sm font-bold uppercase tracking-wider transition-colors duration-300 relative group " + navTextClass + " " + (currentPage === 'gallery' ? 'text-gold-500' : '')}
+              >
+                Gallery
+                <span className={"absolute -bottom-1 left-0 h-0.5 bg-gold-500 transition-all duration-300 " + (currentPage === 'gallery' ? 'w-full' : 'w-0 group-hover:w-full')}></span>
+              </button>
+              <button
+                onClick={() => handleNavigate('blog')}
+                className={"text-sm font-bold uppercase tracking-wider transition-colors duration-300 relative group " + navTextClass + " " + (currentPage === 'blog' ? 'text-gold-500' : '')}
+              >
+                Blog
+                <span className={"absolute -bottom-1 left-0 h-0.5 bg-gold-500 transition-all duration-300 " + (currentPage === 'blog' ? 'w-full' : 'w-0 group-hover:w-full')}></span>
               </button>
               <button
                 onClick={() => handleNavigate('gita-course')}

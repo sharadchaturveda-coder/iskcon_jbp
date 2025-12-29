@@ -16,6 +16,8 @@ import Footer from './components/Footer';
 import AboutPage from './components/pages/AboutPage';
 import DarshanPage from './components/pages/DarshanPage';
 import EventsPage from './components/pages/EventsPage';
+import BlogPage from './components/pages/BlogPage';
+import GalleryPage from './components/pages/GalleryPage';
 import GitaCoursePage from './components/pages/GitaCoursePage';
 import ProjectsPage from './components/pages/ProjectsPage';
 import ArambhFestPage from './components/pages/ArambhFestPage';
@@ -98,6 +100,10 @@ function App() {
         return <DarshanPage />;
       case 'events':
         return <EventsPage />;
+      case 'blog':
+        return <BlogPage />;
+      case 'gallery':
+        return <GalleryPage />;
       case 'gita-course':
         return <GitaCoursePage />;
       case 'projects':
